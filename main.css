@@ -1,0 +1,64 @@
+:root{
+    --mainColor:#fff;
+    --bgColor:#2d2d2d;
+    --detailColor:#78c8ce;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+    color: var(--mainColor);
+}
+
+.containerGrid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    height: 50vh;
+    margin-top: 15vh;
+}
+
+.top{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#eventsDiv{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#functionDiv{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+#selectorDiv{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.circle{
+    background-color: var(--detailColor);
+    border-radius: 50%;
+    text-align: center;
+}
+
+#rightSection{
+    grid-column: 4/5;
+    grid-row: 1/4;
+}
+
+#titleDiv{
+    background-color: var(--mainColor);
+    color: var(--detailColor);
+    height: 20%;
+}
+
+#listOptions{
+    background-color: var(--detailColor);
+    color: var(--bgColor);
+    height: 70%;
+}
+
