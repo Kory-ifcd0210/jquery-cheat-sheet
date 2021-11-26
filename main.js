@@ -43,8 +43,8 @@ let arraySelector = [
     "Get an item by id and change its font weight",
     "Get all the elements that have a certain class and the display property of none and change their font color and the display itself so it’s visible.",
     "Get the options of a select element that are selected (attribute selected)",
-    "Change the href attribute of the first <a> element (You have to create several <a> elements)",
-    "Show an alert with the value of the first <input> of the page (Create an <input> element to test this case)",
+    "Change the href attribute of the first &lt;a> element (You have to create several &lt;a> elements)",
+    "Show an alert with the value of the first &lt;input> of the page (Create an &lt;input> element to test this case)",
     "Remove all items from a specific selector",
     "Animate an item after 2 seconds from the initial page load"
 ]
@@ -77,8 +77,6 @@ function destructor() {
     $("#listOptions").empty();
 }
 
-function createItemList(title) {
-    const item = document.createElement("li");
-    item.innerText = title;
-    $("#listOptions").append(item);
+function createItemList(text) {
+    $("#listOptions").append('<li  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">'+ text +'</li>');
 }
