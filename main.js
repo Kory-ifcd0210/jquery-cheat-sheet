@@ -80,3 +80,8 @@ function destructor() {
 function createItemList(text) {
     $("#listOptions").append('<li  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">'+ text +'</li>');
 }
+
+
+function printModal(example){
+    $(".modal-body").append(example);
+    }
