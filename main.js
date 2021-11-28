@@ -1,5 +1,5 @@
-import getExampleEvent from "./jquery.js";
-import getExampleEventJS from "./vanilla.js";
+import {getExampleEvent, getExampleFunction, getExampeSelector} from "./jquery.js";
+import {getExampleEventJS, getExampleFunctionJS, getExampeSelectorJS} from "./vanilla.js";
 
 let arrayEvents = [
     "When the HTML document has been loaded and you can manipulate it with JavaScript",
@@ -9,7 +9,7 @@ let arrayEvents = [
     "When the user moves the mouse cursor",
     "When the user changes a value of an text input",
     "When an image is loaded",
-    "When an image fails to load, (if you write an incorrect image url the loading of the image will fail)",
+    "When an image fails to load",
     "When a form is submitted",
     "When the user changes the option of a select element",
     "When you position the mouse over an element",
@@ -65,7 +65,6 @@ $("#selectorDiv").on("click", function () {
 });
 
 $(document).on("click", ".printExampleModal", function () {
-    console.log($(this)[0].id);
     let idExample = $(this)[0].id;
     let idExampleSeparated = idExample.split("-");
     let exampleQ;
@@ -78,10 +77,12 @@ $(document).on("click", ".printExampleModal", function () {
 
         case "Functions":
         exampleQ= getExampleFunction(idExampleSeparated[1]);
+        exampleJS= getExampleFunctionJS(idExampleSeparated[1]);
             break;
 
         case "Selectors":
         exampleQ= getExampeSelector(idExampleSeparated[1]);
+        exampleJS=getExampeSelectorJS(idExampleSeparated[1]);
             break;
 
         default:

@@ -1,26 +1,63 @@
 
-
-
 let arrayExamplesEventsQuery=[
-    "ejempli1",
+    "$( 'selector' ).load( function() {} );",
     "$( 'selector' ).on( 'click', myFunction() )",
     "$( 'selector' ).on( 'dblclick', myFunction() )",
     "$( 'selector' ).on( 'keydown', myFunction() )",
     "$( 'selector' ).on( 'mouseover', myFunction() )",
     "$( 'selector' ).change( myFunction )",
-    "$( '#container' ).imagesLoaded( function() { } );",
-    "ejempli8",
-    "ejempli9",
-    "ejempli10"
+    "$( 'selector' ).imagesLoaded( myFunction() { } );",
+    "$( '#image1' ).load(function() { $( '#result1' ).text( 'Image is loaded!' ); }).error(function() { $( '#result1' ).text( 'Image is not loaded!' ); });",
+    "$( 'selector' ).on( 'submit', myFunction( ){ }; );",
+    "$( '#myselect' ).val();",
+    "ejemplo 11",
+    "document.querySelector( '.messageCheckbox' ).checked;",
+    "ejemplo 13"
 ]
-  export default function getExampleEvent(position){
+
+let arrayExamplesFunctionQuery=[
+  "$( 'p' ).append( 'Some appended text.' );",
+  "$( 'selector' ).on( 'click', myFunction() )",
+  "$( 'selector' ).on( 'dblclick', myFunction() )",
+  "$( 'selector' ).on( 'keydown', myFunction() )",
+  "$( 'selector' ).on( 'mouseover', myFunction() )",
+  "$( 'selector' ).change( myFunction )",
+  "$( 'selector' ).imagesLoaded( myFunction() { } );",
+  "$( '#image1' ).load(function() { $( '#result1' ).text( 'Image is loaded!' ); }).error(function() { $( '#result1' ).text( 'Image is not loaded!' ); });",
+  "$( 'selector' ).on( 'submit', myFunction( ){ }; );",
+  "$( '#myselect' ).val();",
+  "ejemplo 11",
+  "document.querySelector( '.messageCheckbox' ).checked;",
+  "ejemplo 13"
+]
+
+let arrayExamplesSelectorQuery=[
+  "$( 'selector' ).load( function() {} );",
+  "$( 'selector' ).on( 'click', myFunction() )",
+  "$( 'selector' ).on( 'dblclick', myFunction() )",
+  "$( 'selector' ).on( 'keydown', myFunction() )",
+  "$( 'selector' ).on( 'mouseover', myFunction() )",
+  "$( 'selector' ).change( myFunction )",
+  "$( 'selector' ).imagesLoaded( myFunction() { } );",
+  "$( '#image1' ).load(function() { $( '#result1' ).text( 'Image is loaded!' ); }).error(function() { $( '#result1' ).text( 'Image is not loaded!' ); });",
+  "$( 'selector' ).on( 'submit', myFunction( ){ }; );",
+  "$( '#myselect' ).val();",
+  "ejemplo 11",
+  "document.querySelector( '.messageCheckbox' ).checked;",
+  "ejemplo 13"
+]
+
+function getExampleEvent(position){
     return arrayExamplesEventsQuery[position];
 }
 
-// export  function getExampleFunction(position){
-//     return arrayExamplesEventsQuery[position];
-// }
+function getExampleFunction(position){
+    return arrayExamplesFunctionQuery[position];
+}
 
-// export  function getExampeSelector(position){
-//     return arrayExamplesEventsQuery[position];
-// }
+function getExampeSelector(position){
+    return arrayExamplesSelectorQuery[position];
+}
+
+
+export {getExampleEvent, getExampleFunction, getExampeSelector };

@@ -1,19 +1,62 @@
 
 let arrayExamplesEventsJS= [
-    "ejemplo1",
-    "object.addEventListener( 'click', myScript );",
-    "object.addEventListener( 'dblclick', myScript );",
+    "document.body.onload = function() { }",
+    "object.addEventListener( 'click', myFunction );",
+    "object.addEventListener( 'dblclick', myFunction );",
     "document.addEventListener( 'keydown', (event) => { const keyName = event.key;} ); ",
-    "object.addEventListener( 'hover', myScript );",
+    "object.addEventListener( 'hover', myFunction );",
     "var x = document.getElementById( 'myText' ).value;",
     "imagesLoaded( document.querySelector( '#container' ), function( instance ) { console.log('all images are loaded'); } );",
-    "ejemplo8",
-    "ejemplo9",
-    "ejemplo10",
+    "var image = new Image(); image.onerror = function() {        console.error( 'Cannot load image' ); }",
+    "document.getElementById( 'myForm' ).submit();",
+    "variable = document.getElementById( 'select_id' ).value;",
     "ejemplo11",
-    "ejemplo12",
+    "$( '#check_id' ).val();",
+    "Ejemplo 13"
 ]
 
-export default function getExampleEventJS(position){
+let arrayExamplesFunctionJS=[
+    "var newDiv = document.createElement( 'div' );var newContent = document.createTextNode( 'Some appended text.' ); newDiv.appendChild( newContent );",
+    "object.addEventListener( 'click', myFunction );",
+    "object.addEventListener( 'dblclick', myFunction );",
+    "document.addEventListener( 'keydown', (event) => { const keyName = event.key;} ); ",
+    "object.addEventListener( 'hover', myFunction );",
+    "var x = document.getElementById( 'myText' ).value;",
+    "imagesLoaded( document.querySelector( '#container' ), function( instance ) { console.log('all images are loaded'); } );",
+    "var image = new Image(); image.onerror = function() {        console.error( 'Cannot load image' ); }",
+    "document.getElementById( 'myForm' ).submit();",
+    "variable = document.getElementById( 'select_id' ).value;",
+    "ejemplo11",
+    "$( '#check_id' ).val();",
+    "Ejemplo 13"
+]
+
+let arrayExamplesSelectorJS=[
+    "document.body.onload = function() { }",
+    "object.addEventListener( 'click', myFunction );",
+    "object.addEventListener( 'dblclick', myFunction );",
+    "document.addEventListener( 'keydown', (event) => { const keyName = event.key;} ); ",
+    "object.addEventListener( 'hover', myFunction );",
+    "var x = document.getElementById( 'myText' ).value;",
+    "imagesLoaded( document.querySelector( '#container' ), function( instance ) { console.log('all images are loaded'); } );",
+    "var image = new Image(); image.onerror = function() {        console.error( 'Cannot load image' ); }",
+    "document.getElementById( 'myForm' ).submit();",
+    "variable = document.getElementById( 'select_id' ).value;",
+    "ejemplo11",
+    "$( '#check_id' ).val();",
+    "Ejemplo 13"
+]
+
+function getExampleEventJS(position){
     return arrayExamplesEventsJS[position];
 }
+
+function getExampleFunctionJS(position){
+    return arrayExamplesFunctionJS[position];
+}
+
+function getExampeSelectorJS(position){
+    return arrayExamplesSelectorJS[position];
+}
+
+export {getExampleEventJS, getExampleFunctionJS, getExampeSelectorJS};
