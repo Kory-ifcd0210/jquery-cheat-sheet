@@ -34,8 +34,7 @@ let arrayFunctions = [
     "Remove the data-src attribute of the img element",
     "Hide an HTML element on click (display: none)",
     "Show an HTML element on click (display: block)",
-    "Fade in an HTML element using jQuery",
-    "Fade out an HTML element using jQuery",
+    "Animate an item after 2 seconds from the initial page load",
 ];
 
 let arraySelectors = [
@@ -49,7 +48,6 @@ let arraySelectors = [
     "Change the href attribute of the first &lt;a> element (You have to create several &lt;a> elements)",
     "Show an alert with the value of the first &lt;input> of the page (Create an &lt;input> element to test this case)",
     "Remove all items from a specific selector",
-    "Animate an item after 2 seconds from the initial page load",
 ];
 
 $("#eventsDiv").on("click", function () {
@@ -111,11 +109,8 @@ function createItemList(text, title, count) {
         '<li  class="printExampleModal btn btn-primary "data-bs-toggle="modal" data-bs-target="#exampleModal"  id="' + title + "-" +count +'" >' +text +"</li>"
     );
 }
-//d
 
 function printModal(exampleQ, exampleJS) {
-    //console.log(example);
     $(".modal-body").empty();
-    //$("#exampleModalLabel").val(idExampleSeparated[1].value);
     $(".modal-body").append("<p>"+exampleQ +"</p><p> "+ exampleJS+"</p>");
 }
