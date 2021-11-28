@@ -1,76 +1,90 @@
-:root{
-    --mainColor:#fff;
-    --bgColor:#2d2d2d;
-    --detailColor:#78c8ce;
+:root {
+    --mainColor: #fff;
+    --bgColor: #2d2d2d;
+    --detailColor: #78c8ce;
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: var(--bgColor);
-    
 }
 
-.containerGrid{
+.containerGrid {
     display: grid;
-    grid-template-columns:10% repeat(6, 1fr);
-    grid-template-rows: repeat(6,1fr);
-    height: 50vh;
-    margin-top: 10vh;
+    grid-template-columns: 10% repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     gap: 2%;
 }
 
 
-@media only screen and (max-width: 768px){
-    .containerGrid{
-        grid-template-columns: repeat(4,1fr);
+@media only screen and (max-width: 800px) {
+    .containerGrid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-top: 5vh;
     }
+
+
 }
 
-@media only screen and (max-width: 350px){
-    /* .containerGrid{
+@media only screen and (max-width: 400px) {
+    .containerGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-top: 5vh;
+    }
 
-    } */
+
 }
 
-.top{
+.top {
     grid-column: 3/4;
     grid-row: 2/3;
 }
 
-#eventsDiv{
+#eventsDiv {
     grid-column: 2/3;
     grid-row: 3/4;
 }
 
-#functionDiv{
+#functionDiv {
     grid-column: 4/5;
     grid-row: 3/4;
 }
 
-#selectorDiv{
+#selectorDiv {
     grid-column: 3/4;
     grid-row: 4/5;
 }
 
-.circle{
+.circle {
     background-color: var(--detailColor);
     border-radius: 50%;
     text-align: center;
     cursor: pointer;
     color: var(--mainColor);
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
 }
 
-#rightSection{
+
+
+#rightSection {
     grid-column: 5/7;
     grid-row: 1/6;
-    height: 80vh;
+    height: 75vh;
 }
 
-#titleDiv{
+
+
+#titleDiv {
     background-color: var(--mainColor);
     color: var(--detailColor);
-    height: 10%;
+    height: 10vh;
 }
 
 /* #titleDiv h2{
@@ -78,37 +92,46 @@ body{
     align-items: flex-end;
 } */
 
-#listOptions{
+#listOptions {
     background-color: var(--detailColor);
     color: var(--bgColor);
     height: 90%;
+    padding-top: 5vh;
     overflow-y: scroll;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: transparent;
     border: none;
-    text-align:left;
-    padding:0;
+    text-align: left;
+    padding: 0;
     color: var(--bgColor);
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     background-color: transparent;
     color: var(--mainColor);
 }
 
-#footer{
+#footer {
     background-color: var(--mainColor);
     bottom: 0;
     position: absolute;
     width: 100%;
 }
 
-#footer p{
+#footer p {
     color: var(--bgColor);
 }
 
-#modal-title{
+/*Modal Style*/
+#modal-title {
     color: var(--bgColor);
+}
+
+.modal-body {
+    display: flex;
+    justify-content: space-around;
+    gap: 10%;
+    word-break: break-word;
 }

@@ -1,4 +1,7 @@
-let arrayEvent = [
+import getExampleEvent from "./jquery.js";
+import getExampleEventJS from "./vanilla.js";
+
+let arrayEvents = [
     "When the HTML document has been loaded and you can manipulate it with JavaScript",
     "When an HTML item has been clicked",
     "When an HTML item has been double clicked",
@@ -11,10 +14,10 @@ let arrayEvent = [
     "When the user changes the option of a select element",
     "When you position the mouse over an element",
     "When a checkbox is checked or unchecked",
-    "When a ul list item is clicked, show the item that was clicked"
-]
+    "When a ul list item is clicked, show the item that was clicked",
+];
 
-let arrayFunction = [
+let arrayFunctions = [
     "Create an HTML element with any text value",
     "Remove an HTML element with any text value",
     "Append an HTML element with any text value to a parent element",
@@ -32,10 +35,10 @@ let arrayFunction = [
     "Hide an HTML element on click (display: none)",
     "Show an HTML element on click (display: block)",
     "Fade in an HTML element using jQuery",
-    "Fade out an HTML element using jQuery"
-]
+    "Fade out an HTML element using jQuery",
+];
 
-let arraySelector = [
+let arraySelectors = [
     "Iterate a collection of elements and apply a change of style on them",
     "Get the parent element of a certain element and change its font weight",
     "Get the collection of children of a certain element and change its font weight",
@@ -46,42 +49,72 @@ let arraySelector = [
     "Change the href attribute of the first &lt;a> element (You have to create several &lt;a> elements)",
     "Show an alert with the value of the first &lt;input> of the page (Create an &lt;input> element to test this case)",
     "Remove all items from a specific selector",
-    "Animate an item after 2 seconds from the initial page load"
-]
-
-
+    "Animate an item after 2 seconds from the initial page load",
+];
 
 $("#eventsDiv").on("click", function () {
-    drawInfo("Events", arrayEvent);
+    drawInfo("Events", arrayEvents);
 });
 
 $("#functionDiv").on("click", function () {
-    drawInfo("Function", arrayFunction);
+    drawInfo("Functions", arrayFunctions);
 });
 
 $("#selectorDiv").on("click", function () {
-    drawInfo("Selector", arraySelector);
+    drawInfo("Selectors", arraySelectors);
+});
+
+$(document).on("click", ".printExampleModal", function () {
+    console.log($(this)[0].id);
+    let idExample = $(this)[0].id;
+    let idExampleSeparated = idExample.split("-");
+    let exampleQ;
+    let exampleJS;
+    switch (idExampleSeparated[0]) {
+        case "Events":
+            exampleQ= getExampleEvent(idExampleSeparated[1]);
+            exampleJS= getExampleEventJS(idExampleSeparated[1]);
+            break;
+
+        case "Functions":
+        exampleQ= getExampleFunction(idExampleSeparated[1]);
+            break;
+
+        case "Selectors":
+        exampleQ= getExampeSelector(idExampleSeparated[1]);
+            break;
+
+        default:
+            break;
+    }
+    printModal(exampleQ, exampleJS);
 });
 
 function drawInfo(title, array) {
     destructor();
+    let count = 0;
     $("#titleDiv").append("<h2>" + title + "</h2>");
     array.forEach(function (value, index) {
-        createItemList(value);
-    })
+        createItemList(value, title, count);
+        count++;
+    });
 }
-
 
 function destructor() {
     $("#titleDiv").empty();
     $("#listOptions").empty();
 }
 
-function createItemList(text) {
-    $("#listOptions").append('<li  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">'+ text +'</li>');
+function createItemList(text, title, count) {
+    $("#listOptions").append(
+        '<li  class="printExampleModal btn btn-primary "data-bs-toggle="modal" data-bs-target="#exampleModal"  id="' + title + "-" +count +'" >' +text +"</li>"
+    );
 }
+//d
 
-
-function printModal(example){
-    $(".modal-body").append(example);
-    }
+function printModal(exampleQ, exampleJS) {
+    //console.log(example);
+    $(".modal-body").empty();
+    //$("#exampleModalLabel").val(idExampleSeparated[1].value);
+    $(".modal-body").append("<p>"+exampleQ +"</p><p> "+ exampleJS+"</p>");
+}
